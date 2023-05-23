@@ -2,19 +2,33 @@
 
 ## Problem 1
 
-You are given `row x col` grid representing a map where `grid[i][j] = 1` represents land and `grid[i][j] = 0` represents water.
+An image is represented by an `n x m` integer grid image where `image[i][j]` represents the pixel value of the image.
 
-Grid cells are connected horizontally/vertically (not diagonally). The grid is completely surrounded by water, and there is exactly one island (i.e., one or more connected land cells).
+You are also given three integers `sr`, `sc`, and `color`. You should perform a flood fill on the image starting from the pixel `image[sr][sc]`.
 
-The island doesn't have "lakes", meaning the water inside isn't connected to the water around the island. One cell is a square with side length 1. The grid is rectangular, width and height don't exceed 100. Determine the perimeter of the island.
+To perform a flood fill, consider the starting pixel, plus any pixels connected 4-directionally to the starting pixel of the same color as the starting pixel, plus any pixels connected 4-directionally to those pixels (also with the same color), and so on. Replace the color of all of the aforementioned pixels with color.
 
-![image](https://github.com/CS-221-DS-ALGO/week11-graphs/assets/129171338/5f791154-7519-4037-9f55-09a2f896d330)
+Return the modified image after performing the flood fill.
+
+![image](https://github.com/CS-221-DS-ALGO/week11-graphs/assets/129171338/1b49a1da-fddd-49b9-8117-5ddc9a54c50e)
 
 **Example**
 ```
-Input: grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]
-Output: 16
-Explanation: The perimeter is the 16 yellow stripes in the image above.
+Input: image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, color = 2
+Output: [[2,2,2],[2,2,0],[2,0,1]]
+Explanation: From the center of the image with position (sr, sc) = (1, 1) (i.e., the red pixel), 
+all pixels connected by a path of the same color as the starting pixel (i.e., the blue pixels) are colored with the new color.
+Note the bottom corner is not colored 2, because it is not 4-directionally connected to the starting pixel.
+```
+
+**Constraints**
+```
+n == image.length
+m == image[i].length
+1 <= m, n <= 50
+0 <= image[i][j], color < 100
+0 <= sr < m
+0 <= sc < n
 ```
 
 ## Problem 2
