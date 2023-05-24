@@ -25,5 +25,5 @@ int main()
         edges.push_back(f);
     }
 
-    cout << solve(n, edges, distanceThreshold) << '\n';
+    cout << solve(n, edges, distanceThreshold);
 }
