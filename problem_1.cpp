@@ -21,7 +21,15 @@ int main()
     cin >> sr >> sc >> color;
 
     vector<vector<int> > ans = solve(image, sr, sc, color);
-    for(int i = 0; i < n; i ++, cout << '\n')
+    for(int i = 0; i < n; i ++)
+    {
         for(int j = 0; j < n; j ++)
-            cout << ans[i][j] << ' ';
+        {   
+            cout << ans[i][j];
+            if(j != n - 1)
+                cout << ' ';
+        }
+        if(i != n - 1)
+            cout << '\n';
+    }
 }
