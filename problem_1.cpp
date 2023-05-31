@@ -15,8 +15,8 @@ int main()
     cin >> n;
     vector<vector<int> > image(n, vector<int>(n, 0));
     for(int i = 0; i < n; i ++)
-        for(int j = 0; j < n; j ++)
-            cin >> image[i][j];
+    for(int j = 0; j < n; j ++)
+        cin >> image[i][j];
     int sr, sc, color;
     cin >> sr >> sc >> color;
 
